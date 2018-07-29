@@ -1,0 +1,46 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+#home_msg_container {
+    background-image: url(../Content/images/medical-background.png);
+}
+
+#site_medical_logo {
+    /* border: 1px solid white; */
+    background-image: url(../Content/images/medical-logo-resized.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 50px;
+    width: 40px;
+    float: left;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* bajandole un poco a la emocion del h1 de jumbotron */
+@media screen and (min-width: 768px) {
+    .jumbotron h1 {
+        font-size: 55px;
+    }
+}

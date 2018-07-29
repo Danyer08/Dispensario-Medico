@@ -1,0 +1,80 @@
+﻿@model IEnumerable<DispensarioMedicoUnapec.Medicamentos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p style="float:right">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<form method="get" style="margin-bottom:15px">
+    <input style="float:left" class="form-control" type="text" id="Criterio" name="Criterio" />
+    <input class="btn btn-outline-primary" type="submit" id="cdmBuscar" value="Buscar" />
+</form>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dosis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Farmacos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marcas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ubicacion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dosis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Farmacos.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marcas.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ubicacion.Descripcion)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdMedicamento }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdMedicamento }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdMedicamento })
+            </td>
+        </tr>
+    }
+
+</table>

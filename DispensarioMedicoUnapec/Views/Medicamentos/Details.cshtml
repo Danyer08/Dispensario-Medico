@@ -1,0 +1,82 @@
+﻿@model DispensarioMedicoUnapec.Medicamentos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Medicamentos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dosis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dosis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Farmacos.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Farmacos.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marcas.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marcas.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ubicacion.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ubicacion.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdMedicamento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

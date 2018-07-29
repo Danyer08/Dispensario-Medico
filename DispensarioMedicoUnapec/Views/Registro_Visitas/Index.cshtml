@@ -1,0 +1,81 @@
+﻿@model IEnumerable<DispensarioMedicoUnapec.Registro_Visitas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p style="float:right">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Export File", "Exportar", null, new { @class = "btn btn-primary" })
+</p>
+<form method="get" style="margin-bottom:15px">
+    <input style="float:left" class="form-control" type="text" id="Criterio" name="Criterio" />
+    <input class="btn btn-outline-primary" type="submit" id="cdmBuscar" value="Buscar" />
+</form>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaVisita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoraVisita)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sintomas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recomendaciones)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Medicamentos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Medicos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pacientes)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaVisita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraVisita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sintomas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Recomendaciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicamentos.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicos.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pacientes.Nombre)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdVisita }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdVisita }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdVisita })
+            </td>
+        </tr>
+    }
+
+</table>
